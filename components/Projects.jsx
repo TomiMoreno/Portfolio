@@ -2,9 +2,9 @@ import Project from "./Project"
 
 export default function Projects(){
   const projectList = [{
-    name:'btree', 
+    name:'Btree', 
     codeURL: 'https://github.com/TomiMoreno/btree', 
-    description: 'Aplicación de vizualización de árboles ', 
+    description: 'Aplicación interactiva de vizualización de árboles binarios.', 
     pageURL:'btree.vercel.app',
     imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
   },
@@ -16,7 +16,7 @@ export default function Projects(){
   }]
   return(<>
     <main>
-      <h1>Mis trabajos</h1>
+      <h1>Mis proyectos</h1>
       <div className="container">
         {projectList.map((project,i)=><Project key={`project-${i}`}{...project} />)}
       </div>

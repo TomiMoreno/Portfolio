@@ -15,40 +15,49 @@ export default function Project({name, description, codeURL, pageURL, imageURL }
       </div>
     </div>
     <style jsx>{`
-      .split{
-        background: #ffffff;
-        width: 70%;
-        display: flex;
-        flex-direction: row;
-        border-radius:20px;
-        overflow: hidden;
-        padding: 1rem;
-        margin-bottom: 2rem;
-        text-align:left;
-        height: 13rem;
-        justify-content:space-around;
-      }
-      .split:nth-child(odd){
+    .btnContainer{
+      display:flex; 
+      align-items:center;
+      justify-content:center;
+    }
+    h2{
+      color: #289533;
+    }
+    .split{
+      background: #ffffff;
+      border-radius:20px;
+      overflow: hidden;
+      width:60%;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: center;
+      margin-bottom:2rem;
+      padding: 1rem;
+    }
+    img{
+      object-fit:cover;
+      flex:1;
+      max-width: 20rem;
+      height:auto
+    }
+    .content{
+      flex:1;
+    }
+    .split:nth-child(odd){
         flex-direction:row-reverse;
-      }
-      h2{
-        color: #289533;
-        
-      }
-      img{
-        width:35%;
-        height:auto;
-        object-fit:cover;
-      }
-      
-      .content{
-        font-weight: 500;
-        width: 60%
-      }
+    }
+    @media (min-width:60em){
       .btnContainer{
-        display:flex; 
-        align-items:center;
-      }
+        justify-content: none;
+      }  
+    .split{
+    }
+    
+    
+    
+    
+    }
+      
     `}</style>
   </>
 }
