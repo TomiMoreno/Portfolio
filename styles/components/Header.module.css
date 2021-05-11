@@ -1,0 +1,33 @@
+.header{
+  background: url(/code.jpg);
+  display: grid;
+  place-items: center;
+  background-blend-mode: darken;
+  background-color: rgba(11,11,11,.5);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  color: white;
+}
+
+.title{
+  text-align: center;
+}
+.container{
+  background: rgba(0, 0, 0, 50%);
+  padding: 2em;
+  z-index: 1;
+}
+
+.attributes{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style:none;
+  font-size:2em;
+}
+
+@media (max-width: 768px) {
+  .attributes{
+    display: block;
+  }
+}
