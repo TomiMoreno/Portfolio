@@ -10,6 +10,7 @@
   "dependencies": {
     "next": "9.5.2",
     "react": "16.13.1",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "16.13.1"
   }
 }
