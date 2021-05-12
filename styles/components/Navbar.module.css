@@ -1,0 +1,95 @@
+.navbar{
+  padding: 0 2rem;
+  position:absolute;
+  top: 0;
+  width: 100vw;
+  background-color: black;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list{
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  perspective: 1000px;
+  display: none;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.list li{
+  padding: 1rem;
+  transition: color .25s ease-in;
+}
+.list li:hover{
+  color: var(--green);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navToggleLabel span,
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+  content: '';
+  position: absolute;
+}
+.navToggleLabel span::before {
+  bottom: 7px;
+}
+.navToggleLabel span::after {
+  top: 7px;
+}
+.navToggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+.navToggle:checked ~ .list{
+  display: block
+}
+@media screen and (min-width: 800px) {
+  .navToggleLabel {
+    display: none;
+  }
+  .list{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    position: unset;
+    width: auto;
+  }
+}
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}

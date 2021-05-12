@@ -5,7 +5,7 @@ export default function Projects() {
     name: 'Btree',
     codeURL: 'https://github.com/TomiMoreno/btree',
     description: 'Aplicación interactiva de vizualización de árboles binarios.',
-    pageURL: 'btree.vercel.app',
+    pageURL: 'https:/btree.vercel.app',
     imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
   },
   {
@@ -16,7 +16,7 @@ export default function Projects() {
     imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
   }]
   return (<>
-    <main>
+    <main id="proyectos">
       <h1>Mis proyectos</h1>
       <div className="container">
         {projectList.map((project, i) => <Project isOdd={i % 2 === 1} key={`project-${i}`} {...project} />)}

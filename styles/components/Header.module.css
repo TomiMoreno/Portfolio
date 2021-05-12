@@ -12,6 +12,7 @@
 
 .title{
   text-align: center;
+  font-weight: 500;
 }
 .container{
   background: rgba(0, 0, 0, 50%);
