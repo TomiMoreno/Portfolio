@@ -1,0 +1,11 @@
+.proyectos{
+  background: #000;
+  text-align:center;
+  padding: 1rem;
+}
+.title{
+  color: white;
+}
+.container > * {
+  margin-bottom: 1rem;
+}

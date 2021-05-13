@@ -1,4 +1,5 @@
 import Project from "./Project"
+import styles from "../styles/components/Projects.module.css"
 
 export default function Projects() {
   const projectList = [{
@@ -16,37 +17,12 @@ export default function Projects() {
     imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
   }]
   return (<>
-    <main id="proyectos">
-      <h1>Mis proyectos</h1>
-      <div className="container">
+    
+    <main className={styles.proyectos} id="proyectos">
+      <h1 className={styles.title} >Mis proyectos</h1>
+      <div className={styles.container}>
         {projectList.map((project, i) => <Project isOdd={i % 2 === 1} key={`project-${i}`} {...project} />)}
       </div>
     </main>
-    <style jsx>{`
-      main{
-        background: #000;
-        width: 100vw;
-        text-align:center;
-      }
-      main:before{
-        content: '';
-        border-bottom: 100px solid black;
-        border-left: 100vw solid transparent;
-        top: -118px;
-        position: relative;
-      }
-      h1{
-        color: white;
-      }
-      .container{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        flex-direction:column;
-      }
-      .container > * {
-        margin-bottom: 1rem;
-      }
-    `}</style>
   </>)
 }

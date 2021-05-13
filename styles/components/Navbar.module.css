@@ -1,22 +1,22 @@
 .navbar{
-  padding: 0 2rem;
-  position:absolute;
-  top: 0;
-  width: 100vw;
+  padding: 1rem;
+  position:sticky;
+  top: -1px;
+  width: 100%;
   background-color: black;
   z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color:white;
 }
 
 .list{
   list-style: none;
   position: absolute;
-  top: 100%;
+  top: 98%;
   left: 0;
   width: 100%;
-  perspective: 1000px;
   display: none;
   animation: growDown 300ms ease-in-out forwards;
   transform-origin: top center;
@@ -32,12 +32,9 @@
   color: var(--green);
 }
 
-.nav-toggle-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: 1em;
-  height: 100%;
+.navToggleLabel{
+  width: 2em;
+  height: 1em;
   display: flex;
   align-items: center;
 }
@@ -57,15 +54,13 @@
   position: absolute;
 }
 .navToggleLabel span::before {
-  bottom: 7px;
+  bottom: calc(.5em -   1px);
 }
 .navToggleLabel span::after {
-  top: 7px;
+  top: calc(.5em - 1px);
 }
 .navToggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
+  display: none;
 }
 .navToggle:checked ~ .list{
   display: block

@@ -4,7 +4,6 @@ export default function Header() {
   return (
     <>
       <header className={styles.header}>
-        <Navbar></Navbar>
         <div className={styles.container}>
           <h1 className={styles.title}><span className="accentColor">Tomás</span> Canosa Moreno</h1>
           <ul className={styles.attributes}>

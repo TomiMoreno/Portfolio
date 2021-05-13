@@ -10,7 +10,7 @@ export default function Navbar() {
         <li><a className={styles.listElement} href="#sobreMi">Acerca de mi</a></li>
         <li><a className={styles.listElement} href="#contacto">Contactame</a></li>
       </ul>
-      <label for="nav-toggle" className={styles.navToggleLabel}>
+      <label htmlFor="nav-toggle" className={styles.navToggleLabel}>
         <span></span>
       </label>
     </nav>
