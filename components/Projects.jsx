@@ -7,7 +7,7 @@ export default function Projects() {
     name: 'Btree',
     codeURL: 'https://github.com/TomiMoreno/btree',
     description: 'Aplicación interactiva de vizualización de árboles binarios.',
-    pageURL: 'https:/btree.vercel.app',
+    pageURL: 'https://btree.vercel.app',
     imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
   },
   {
