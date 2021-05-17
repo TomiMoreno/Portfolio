@@ -10,7 +10,8 @@ export default function Technologies({technologies =[]}) {
         && <img 
           src={technologiesList[tec].src} 
           className={styles.techLogo} 
-          alt={technologiesList[tec].name}/>)}
+          alt={technologiesList[tec].name}
+          title={technologiesList[tec].name} />)}
     </div>
   )
 }

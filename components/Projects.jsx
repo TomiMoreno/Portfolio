@@ -12,7 +12,7 @@ export default function Projects() {
       <div className={styles.container}>
         {projectList.map((project, i) => <Project isOdd={i % 2 === 1} key={`project-${i}`} {...project} />)}
       </div>
+      <SvgCurve color="#000" background="#fff" />
     </main>
-    <SvgCurve color="#000" background="#fff" />
   </>)
 }

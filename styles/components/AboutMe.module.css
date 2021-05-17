@@ -1,0 +1,13 @@
+.container{
+  background: white ;
+  text-align: center;
+  padding: 2rem;
+}
+
+.container h1{
+  margin-top: 0;
+  padding-bottom: 2rem;
+}
+.container p {
+  font-weight: 500;
+}
