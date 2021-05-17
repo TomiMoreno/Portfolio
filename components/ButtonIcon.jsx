@@ -14,7 +14,7 @@ export default function ButtonIcon({children, href, imageURL, className}){
         justify-content: space-between;
         display: flex; 
         transition: all .5s;
-        margin-right: 1rem;
+        margin-bottom:1em
       }
 
       a > img {

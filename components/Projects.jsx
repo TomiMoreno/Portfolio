@@ -9,6 +9,7 @@ export default function Projects() {
     description: 'Aplicación interactiva de vizualización de árboles binarios.',
     pageURL: 'https://btree.vercel.app',
     imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
+    technologies: ['nextjs','css','html','js','react',]
   },
   {
     name: 'PreceBOT',
@@ -16,6 +17,7 @@ export default function Projects() {
     description: 'Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion ',
     pageURL: '',
     imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
+    technologies: ['nextjs','css','html','js','react']
   }]
   return (<>
 
