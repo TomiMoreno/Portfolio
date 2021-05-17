@@ -1,24 +1,10 @@
 import Project from "./Project"
 import styles from "../styles/components/Projects.module.css"
 import SvgCurve from "./SvgCurve"
+import { projectList } from "../data/Projects"
 
 export default function Projects() {
-  const projectList = [{
-    name: 'Btree',
-    codeURL: 'https://github.com/TomiMoreno/btree',
-    description: 'Aplicación interactiva de vizualización de árboles binarios.',
-    pageURL: 'https://btree.vercel.app',
-    imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
-    technologies: ['nextjs','css','html','js','react',]
-  },
-  {
-    name: 'PreceBOT',
-    codeURL: '',
-    description: 'Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion ',
-    pageURL: '',
-    imageURL: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png',
-    technologies: ['nextjs','css','html','js','react']
-  }]
+  
   return (<>
 
     <main className={styles.proyectos} id="proyectos">
