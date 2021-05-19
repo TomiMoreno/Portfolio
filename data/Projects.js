@@ -22,15 +22,19 @@ export const projectList = [{
 
 export const technologiesList = {
   [NEXT_ID]: {
-    src: 'nextjs.svg',
-    name: 'Next.js'},
+    src: 'technologies/nextjs.svg',
+    name: 'Next.js'
+  },
   [CSS_ID]: {
-    src: 'css.svg',
-    name: 'CSS3'},
-  [HTML_ID]:{
-    src: 'html.svg',
-    name: 'HTML5'},
-  [REACT_ID]:{
-    src: 'react.png',
-    name: 'React.js'}
+    src: 'technologies/css.svg',
+    name: 'CSS3'
+  },
+  [HTML_ID]: {
+    src: 'technologies/html.svg',
+    name: 'HTML5'
+  },
+  [REACT_ID]: {
+    src: 'technologies/react.png',
+    name: 'React.js'
+  }
 }
