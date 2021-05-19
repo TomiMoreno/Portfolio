@@ -10,4 +10,37 @@
 }
 .container p {
   font-weight: 500;
+  max-width: 60rem;
+  margin: auto;
+}
+.container h2 {
+  font-size: 2rem;
+  max-width: 60rem;
+  margin: 1em auto;
+}
+
+.split > * > img {
+  width: 3rem;
+}
+.split > *{
+  margin-bottom: 2rem;
+}
+.split ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.split{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+}
+
+@media (min-width:50em){
+  .split{
+    flex-direction: row;
+  }  
 }
