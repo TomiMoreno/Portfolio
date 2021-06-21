@@ -23,6 +23,26 @@ export const projectList = [
       "https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png",
     technologies: [NEXT_ID, CSS_ID, HTML_ID, JS_ID, REACT_ID],
   },
+  {
+    name: "PreceBOT",
+    codeURL: "",
+    description:
+      "Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion ",
+    pageURL: "",
+    imageURL:
+      "https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png",
+    technologies: [NEXT_ID, CSS_ID, HTML_ID, JS_ID, REACT_ID],
+  },
+  {
+    name: "PreceBOT",
+    codeURL: "",
+    description:
+      "Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion ",
+    pageURL: "",
+    imageURL:
+      "https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png",
+    technologies: [NEXT_ID, CSS_ID, HTML_ID, JS_ID, REACT_ID],
+  },
 ];
 
 export const technologiesList = {

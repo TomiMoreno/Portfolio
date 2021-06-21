@@ -1,5 +1,4 @@
 .proyectos {
-  background: var(--primary);
   text-align: center;
 }
 .title {
@@ -11,4 +10,9 @@
 }
 .container > * {
   margin-bottom: 1rem;
+}
+.showMore {
+  background-color: var(--primary);
+  color: var(--secondary);
+  margin: 0 auto;
 }

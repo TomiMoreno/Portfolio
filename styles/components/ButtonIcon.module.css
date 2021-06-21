@@ -1,23 +1,26 @@
 .btn {
-  padding: 0.5rem 0.2rem;
+  padding: 0.5rem;
   padding-right: 0.5rem;
   border: solid var(--primary) 2px;
   border-radius: 1.5rem;
-  width: 9rem;
   align-items: center;
   justify-content: space-between;
   display: flex;
   transition: all 0.5s;
   margin-bottom: 1em;
+  cursor: pointer;
 }
-
+.btn > span {
+  padding-right: 0.5rem;
+  white-space: nowrap;
+}
 .btn > img {
   width: 1.6rem;
   height: auto;
   transition: all 0.5s;
 }
 .btn:hover > img {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .btn:hover {
   border-color: var(--accent);

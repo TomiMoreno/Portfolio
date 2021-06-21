@@ -31,6 +31,9 @@ a {
   text-decoration: none;
 }
 
+button {
+  font: 400 1rem Roboto;
+}
 * {
   box-sizing: border-box;
 }
