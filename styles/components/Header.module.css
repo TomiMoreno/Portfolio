@@ -6,7 +6,7 @@
   background-color: rgba(11, 11, 11, 0.5);
   min-height: 100vh;
   background-size: cover;
-  color: white;
+  color: var(--secondary);
 }
 
 .title {
@@ -32,11 +32,10 @@
 .container a {
   margin-top: 1em;
   padding: 1em;
-  background: #000;
-  border: white 1px solid;
+  border: var(--secondary) 1px solid;
   border-radius: 3em;
   transition: all 0.5s;
-  color: white;
+  color: var(--secondary);
   cursor: pointer;
 }
 

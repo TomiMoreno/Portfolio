@@ -1,12 +1,12 @@
-.proyectos{
-  background: #000;
-  text-align:center;
+.proyectos {
+  background: var(--primary);
+  text-align: center;
 }
-.title{
-  color: white;
+.title {
   padding: 1rem;
+  color: var(--secondary);
 }
-.container{
+.container {
   padding: 1rem;
 }
 .container > * {

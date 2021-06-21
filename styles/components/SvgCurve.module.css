@@ -1,0 +1,7 @@
+.curve {
+  background: var(--secondary);
+  display: block;
+}
+.curve > path {
+  fill: var(--primary-light);
+}

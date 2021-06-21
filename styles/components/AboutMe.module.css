@@ -1,5 +1,5 @@
 .container {
-  background: white;
+  background: var(--secondary);
   text-align: center;
   padding: 2rem;
 }
