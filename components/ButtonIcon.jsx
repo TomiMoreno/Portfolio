@@ -6,7 +6,6 @@ export default function ButtonIcon({
   className,
   ...props
 }) {
-  console.log(href);
   return (
     <>
       {!!href ? (
