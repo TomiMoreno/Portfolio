@@ -3,6 +3,7 @@ export default function ButtonIcon({
   children,
   href,
   imageURL,
+  imageAlt,
   className,
   ...props
 }) {
@@ -11,12 +12,12 @@ export default function ButtonIcon({
       {!!href ? (
         <a href={href} className={`${styles.btn} ${className}`} {...props}>
           <span>{children}</span>
-          <img src={imageURL} />
+          <img src={imageURL} alt={imageAlt} />
         </a>
       ) : (
         <button className={`${styles.btn} ${className}`} {...props}>
           <span>{children}</span>
-          <img src={imageURL} />
+          <img src={imageURL} alt={imageAlt}/>
         </button>
       )}
     </>

@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <>
       <main className={styles.proyectos} id="proyectos">
-        <h1 className={styles.title}>Mis proyectos</h1>
+        <h2 className={styles.title}>Mis proyectos</h2>
         <div className={styles.container}>
           {projectList.slice(0, numberOfProjects).map((project, i) => (
             <Project isOdd={i % 2 === 1} key={`project-${i}`} {...project} />
@@ -20,6 +20,7 @@ export default function Projects() {
           <ButtonIcon
             className={styles.showMore}
             imageURL="add.svg"
+            imageAlt="Plus"
             onClick={() => {
               setNumberOfProjects((n) => n + 3);
             }}

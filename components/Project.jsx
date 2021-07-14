@@ -13,8 +13,8 @@ export default function Project({ name, description, codeURL, pageURL, imageURL,
         <p>{description}</p>
         <Technologies technologies={technologies} />
         <div className={styles.btnContainer} >
-          <ButtonIcon href={codeURL} imageURL="/github.svg">Visitar código</ButtonIcon>
-          <ButtonIcon href={pageURL} imageURL="/globe.svg">Visitar página</ButtonIcon>
+          <ButtonIcon href={codeURL} imageAlt="Github logo" imageURL="/github.svg">Visitar código</ButtonIcon>
+          <ButtonIcon href={pageURL} imageAlt="Web logo" imageURL="/globe.svg">Visitar página</ButtonIcon>
         </div>
       </div>
     </ScrollAnimation>
