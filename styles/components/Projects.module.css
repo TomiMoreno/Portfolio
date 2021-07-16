@@ -7,6 +7,7 @@
 }
 .container {
   padding: 1rem;
+  overflow:hidden;
 }
 .container > * {
   margin-bottom: 1rem;
