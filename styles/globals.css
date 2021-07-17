@@ -25,6 +25,8 @@ body {
   --secondary: var(--white);
   --primary-light: var(--gray);
   --accent: var(--green);
+  --background-color: var(--gray);
+  --primary-dark: rgb(28 31 35);
 }
 a {
   color: inherit;
