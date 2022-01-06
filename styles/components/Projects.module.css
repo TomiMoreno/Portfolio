@@ -1,5 +1,6 @@
 .proyectos {
   text-align: center;
+  overflow-x: hidden;
 }
 .title {
   padding: 1rem;
