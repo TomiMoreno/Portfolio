@@ -1,65 +1,67 @@
-const NEXT_ID = "nextjs";
-const CSS_ID = "css";
-const HTML_ID = "html";
-const JS_ID = "js";
-const REACT_ID = "react";
+const NEXT = "nextjs";
+const CSS = "css";
+const HTML = "html";
+const JAVASCRIPT = "javascript";
+const REACT = "react";
+const SOLIDITY = "solidity";
+const TYPESCRIPT = "typescript";
 export const projectList = [
   {
+    name: "Blockchain art gallery",
+    description: "Esta es una aplicación web3 que permite crear un pixel art, subirlo a la blockchain y visualizar todos los pixel art subidos.",
+    descriptionEn: "This is a web3 app that allows you to create a pixel art sketch, upload it to the blockchain and view all the pixel art uploaded.",
+    technologies: [REACT, SOLIDITY, NEXT, TYPESCRIPT],
+    codeURL: "https://github.com/TomiMoreno/blockchain-art-gallery",
+    pageURL: "https://blockchain-art-gallery.vercel.app",
+    imageURL: "/covers/blockchain-art-gallery.png",
+  },
+  {
     name: "Btree",
+    description: "Esta app fue creada para automatizar el proceso de creación de un árbol binario de decisiones y una tabla de verdad.",
+    descriptionEn: "This app was created to automate the process of creating a binary tree and a truth table.",
+    technologies: [NEXT, CSS, HTML, JAVASCRIPT, REACT],
     codeURL: "https://github.com/TomiMoreno/btree",
-    description: "Aplicación interactiva de vizualización de árboles binarios.",
     pageURL: "https://btree.vercel.app",
-    imageURL:
-      "https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png",
-    technologies: [NEXT_ID, CSS_ID, HTML_ID, JS_ID, REACT_ID],
+    imageURL: "/covers/btree.png",
   },
   {
-    name: "PreceBOT",
-    codeURL: "",
-    description:
-      "Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion ",
-    pageURL: "",
-    imageURL:
-      "https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png",
-    technologies: [NEXT_ID, CSS_ID, HTML_ID, JS_ID, REACT_ID],
-  },
-  {
-    name: "PreceBOT",
-    codeURL: "",
-    description:
-      "Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion ",
-    pageURL: "",
-    imageURL:
-      "https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png",
-    technologies: [NEXT_ID, CSS_ID, HTML_ID, JS_ID, REACT_ID],
-  },
-  {
-    name: "PreceBOT",
-    codeURL: "",
-    description:
-      "Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion ",
-    pageURL: "",
-    imageURL:
-      "https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png",
-    technologies: [NEXT_ID, CSS_ID, HTML_ID, JS_ID, REACT_ID],
-  },
+    name: "Moflix",
+    codeURL: "https://github.com/TomiMoreno/Moflix",
+    description:"Moflix es una aplicación web, que permite ver trailers de películas.",
+    descriptionEn:"Moflix is a web application that allows you to see trailers of movies.",
+    pageURL: "moflix.vercel.app",
+    imageURL: "/covers/moflix.png",
+    technologies: [NEXT, CSS, HTML, JAVASCRIPT, REACT],
+  }
 ];
 
 export const technologiesList = {
-  [NEXT_ID]: {
+  [NEXT]: {
     src: "technologies/nextjs.svg",
     name: "Next.js",
   },
-  [CSS_ID]: {
+  [CSS]: {
     src: "technologies/css.svg",
     name: "CSS3",
   },
-  [HTML_ID]: {
+  [HTML]: {
     src: "technologies/html.svg",
     name: "HTML5",
   },
-  [REACT_ID]: {
+  [REACT]: {
     src: "technologies/react.svg",
     name: "React.js",
   },
+  [JAVASCRIPT]: {
+    src: "technologies/javascript.svg",
+    name: "JavaScript",
+  },
+  [SOLIDITY]: {
+    src: "technologies/solidity.svg",
+    name: "Solidity",
+  },
+  [TYPESCRIPT]: {
+    src: "technologies/typescript.svg",
+    name: "TypeScript",
+  }
 };
