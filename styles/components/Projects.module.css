@@ -8,12 +8,13 @@
 }
 .container {
   padding: 1rem;
+  overflow:hidden;
 }
 .container > * {
   margin-bottom: 1rem;
 }
 .showMore {
-  background-color: var(--primary);
+  background-color: var(--background-color);
   color: var(--secondary);
   margin: 0 auto;
 }
