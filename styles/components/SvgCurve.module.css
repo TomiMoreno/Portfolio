@@ -1,7 +1,8 @@
 .curve {
-  background: var(--secondary);
   display: block;
+  background: var(--background-secondary);
+  background: linear-gradient( 0deg, var(--background-secondary) 0%, var(--accent) 69%);
 }
 .curve > path {
-  fill: var(--primary-light);
+  fill: var(--background-color);
 }

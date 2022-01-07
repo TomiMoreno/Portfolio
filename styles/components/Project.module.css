@@ -1,5 +1,5 @@
 .split {
-  background: var(--secondary);
+  background: var(--background-secondary);
   border-radius: 20px;
   overflow: hidden;
   display: flex;

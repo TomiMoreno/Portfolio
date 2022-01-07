@@ -23,7 +23,7 @@ export default function Header() {
             <li>
               <Link href="https://github.com/TomiMoreno">
                 <a className="flex" target="_blank">
-                  <Image width={32} height={32} src="/github.svg" />
+                  <Image width={32} height={32} src="/github-white.svg" />
                   <span>Github</span>
                 </a>
               </Link>

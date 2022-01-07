@@ -12,21 +12,24 @@ body {
   padding: 0;
 }
 body {
-  background: var(--primary-light);
-  color: var(--primary);
+  background: var(--background-color);
+  color: var(--secondary);
 }
 :root {
+  --black: rgb(0, 0, 0);
   --green: rgb(0 181 63);
-  --black: rgb(34, 40, 49);
+  --dark-blue: rgb(34, 40, 49);
   --gray: rgb(57, 62, 70);
   --teal: rgb(0, 173, 181);
   --white: rgb(238, 238, 238);
-  --primary: var(--black);
-  --secondary: var(--white);
-  --primary-light: var(--gray);
-  --accent: var(--green);
-  --background-color: var(--gray);
+  --primary: var(--dark-blue);
   --primary-dark: rgb(28 31 35);
+  --primary-light: var(--gray);
+  --secondary: var(--white);
+  --accent: var(--green);
+  --background-color: var(--black);
+  --background-secondary: var(--gray);
+  font-size: 16px;
 }
 a {
   color: inherit;
@@ -42,6 +45,9 @@ button {
 
 h1 {
   font-size: 3rem;
+}
+h2 {
+  font-weight: 500;
 }
 .accentColor {
   color: var(--accent);

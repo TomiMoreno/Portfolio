@@ -13,7 +13,6 @@
   font-size: 3em;
 }
 .container {
-  background: var(--primary-dark);
   padding: 2em;
   z-index: 1;
   display: flex;
@@ -26,8 +25,8 @@
 }
 
 .attributes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   font-size: 1.5em;
 }
@@ -35,6 +34,7 @@
   display: flex;
   gap: .25em;
   align-items: center;
+  padding: .5em;
 }
 .container a {
   transition: all 0.5s;
@@ -64,6 +64,7 @@
   background: var(--primary-dark);
   z-index: 1;
   border-radius: 50%;
+  filter: blur(60px);
 }
 @media (max-width: 768px) {
   .attributes {

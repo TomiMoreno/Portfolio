@@ -1,5 +1,6 @@
 .container {
-  background: var(--secondary);
+  background: var(--background-secondary);
+  color: var(--secondary);
   text-align: center;
   padding: 2rem;
 }
@@ -44,3 +45,4 @@
     flex-direction: row;
   }
 }
+
