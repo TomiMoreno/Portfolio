@@ -16,7 +16,6 @@ export default function Home() {
           name="description"
           content="Desarrollador frontend enfofacdo en React y Next"
         />
-        <link rel="canonical" href="https://tomimoreno.com/" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Tomás Canosa Moreno" key="title" />
         <meta
@@ -28,7 +27,6 @@ export default function Home() {
         <meta property="og:type" content="website" key="type" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://www.tomimoreno.com" />
-        <meta lang="es" />
       </Head>
       <Bubbles />
       <Navbar />
