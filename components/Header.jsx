@@ -16,7 +16,7 @@ export default function Header() {
         </div>
         <div className={styles.container}>
           <h1 className={styles.title}>
-            <span className="accentColor">Tomás</span> Canosa Moreno
+            <span className="colorGreen">Tomás</span> Canosa Moreno
           </h1>
           <h2>Desarrollador fullstack</h2>
           <ul className={styles.attributes}>

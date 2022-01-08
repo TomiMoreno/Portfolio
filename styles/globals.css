@@ -17,11 +17,13 @@ body {
 }
 :root {
   --black: rgb(0, 0, 0);
-  --green: rgb(0 181 63);
   --dark-blue: rgb(34, 40, 49);
   --gray: rgb(57, 62, 70);
   --teal: rgb(0, 173, 181);
   --white: rgb(238, 238, 238);
+  --red: rgb(255, 0, 0);
+  --blue: rgb(0, 0, 255);
+  --green: rgb(0 181 63);
   --primary: var(--dark-blue);
   --primary-dark: rgb(28 31 35);
   --primary-light: var(--gray);
@@ -45,35 +47,26 @@ button {
 
 h1 {
   font-size: 3rem;
+  font-weight: 500;
 }
+
 h2 {
   font-weight: 500;
 }
-.accentColor {
-  color: var(--accent);
-}
-.slideRight {
-  animation-name: slideRight;
-  position: relative;
-}
-.slideLeft {
-  animation-name: slideLeft;
-  position: relative;
-}
-@keyframes slideRight {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+
+h3 {
+  font-weight: 500;
 }
 
-@keyframes slideLeft {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.colorRed {
+  color: var(--red);
 }
+
+.colorBlue {
+  color: var(--blue);
+}
+
+.colorGreen {
+  color: var(--green);
+}
+
