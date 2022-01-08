@@ -34,7 +34,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="https://www.linkedin.com/in/tom%C3%A1s-canosa-moreno-7823191b5/">
+              <Link href="https://www.linkedin.com/in/tomimoreno">
                 <a className="flex" target="_blank" rel="noopener">
                   <Image
                     width={32}
