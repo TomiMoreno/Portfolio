@@ -1,0 +1,22 @@
+.bubbleGray {
+  width: 55vw;
+  height: 55vw;
+  position: absolute;
+  left: -13%;
+  background: var(--gray);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: move 15s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

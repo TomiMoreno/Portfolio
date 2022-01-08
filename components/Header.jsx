@@ -6,7 +6,6 @@ export default function Header() {
   return (
     <>
       <header className={`${styles.header} ${styles.split}`}>
-        <div className={styles.circle}></div>
         <div className={styles.photoContainer}>
           <img
             className={styles.photo}
@@ -26,7 +25,7 @@ export default function Header() {
                   <Image
                     width={32}
                     height={32}
-                    src="/github-white.svg"
+                    src="/github.svg"
                     alt="Github logo"
                   />
                   <span>Github</span>

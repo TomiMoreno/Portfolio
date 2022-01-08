@@ -15,6 +15,11 @@ body {
   background: var(--background-color);
   color: var(--secondary);
 }
+#__next {
+  position: relative;
+  overflow-x: hidden;
+}
+
 :root {
   --black: rgb(0, 0, 0);
   --dark-blue: rgb(34, 40, 49);

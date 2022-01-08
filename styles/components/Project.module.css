@@ -1,5 +1,6 @@
 .split {
-  background: var(--background-secondary);
+  background: var(--background-color);
+  background: rgb(0 0 0 / 61%);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -10,6 +11,7 @@
   margin-bottom: 2rem;
   padding: 1rem;
   max-width: 60rem;
+  box-shadow: 1px 1px 6px 1px rgb(69 69 69 / 50%);
 }
 .btnContainer {
   display: flex;

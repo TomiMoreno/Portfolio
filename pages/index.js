@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Bubbles from "../components/Bubbles";
 import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import Header from "../components/Header";
@@ -29,6 +30,7 @@ export default function Home() {
         <link rel="canonical" href="https://www.tomimoreno.com" />
         <meta lang="es" />
       </Head>
+      <Bubbles />
       <Navbar />
       <Header />
       <Projects />

@@ -56,16 +56,6 @@
   text-align: center;
 }
 
-.circle {
-  width: 55vw;
-  height: 55vw;
-  position: absolute;
-  left: -13%;
-  background: var(--primary-dark);
-  z-index: 1;
-  border-radius: 50%;
-  filter: blur(60px);
-}
 @media (max-width: 768px) {
   .attributes {
     display: block;
