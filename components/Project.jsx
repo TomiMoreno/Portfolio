@@ -4,6 +4,7 @@ import Technologies from "./Technologies";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const projectVariants = {
   visible: { x: 0 },
@@ -41,9 +42,11 @@ export default function Project({
         variants={projectVariants}
         initial={isOdd ? "hiddenOdd" : "hiddenEven"}
       >
-        <img src={imageURL} alt={name} className={styles.img} />
+        <div className={styles.imgContainer}>
+          <Image layout="fill" src={imageURL} alt={name}/>
+        </div>
         <div className={styles.content}>
-          <h2>{name}</h2> 
+          <h2>{name}</h2>
           <p>{description}</p>
           <Technologies technologies={technologies} />
           <div className={styles.btnContainer}>

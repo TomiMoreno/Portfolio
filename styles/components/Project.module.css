@@ -15,18 +15,24 @@
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  width: 70%;
+  width: 90%;
 }
 .split:nth-child(odd) {
   flex-direction: row-reverse;
 }
-.img {
-  object-fit: cover;
+.imgContainer {
   flex: 1;
+  flex-basis: 15rem;
   max-width: 20rem;
-  height: auto;
-  border-radius: 2rem;
   box-shadow: rgb(0 0 0 / 5%) 0 0 0 1px;
+  position: relative;
+  min-height: 10rem;
+}
+
+.imgContainer img {
+  object-fit: cover;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 .content {
   flex: 1;

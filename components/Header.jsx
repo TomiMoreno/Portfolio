@@ -22,16 +22,26 @@ export default function Header() {
           <ul className={styles.attributes}>
             <li>
               <Link href="https://github.com/TomiMoreno">
-                <a className="flex" target="_blank">
-                  <Image width={32} height={32} src="/github-white.svg" />
+                <a className="flex" target="_blank" rel="noopener">
+                  <Image
+                    width={32}
+                    height={32}
+                    src="/github-white.svg"
+                    alt="Github logo"
+                  />
                   <span>Github</span>
                 </a>
               </Link>
             </li>
             <li>
               <Link href="https://www.linkedin.com/in/tom%C3%A1s-canosa-moreno-7823191b5/">
-                <a className="flex" target="_blank">
-                  <Image width={32} height={32} src="/linkedin.svg" />
+                <a className="flex" target="_blank" rel="noopener">
+                  <Image
+                    width={32}
+                    height={32}
+                    src="/linkedin.svg"
+                    alt="Linkedin logo"
+                  />
                   <span>LinkedIn</span>
                 </a>
               </Link>
