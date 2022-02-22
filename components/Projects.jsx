@@ -3,12 +3,14 @@ import Project from "./Project";
 import styles from "../styles/components/Projects.module.css";
 import { projectList } from "../data/Projects";
 import ButtonIcon from "./ButtonIcon";
+import { useMakeScrollable } from "../hooks/useScrollIntoView";
 
 export default function Projects() {
   const [numberOfProjects, setNumberOfProjects] = useState(3);
+  const ref = useMakeScrollable("projects");
   return (
     <>
-      <main className={styles.proyectos} id="proyectos">
+      <main className={styles.proyectos} ref={ref}>
         <h2 className={styles.title}>Mis proyectos</h2>
         <div className={styles.container}>
           {projectList.slice(0, numberOfProjects).map((project, i) => (
