@@ -1,5 +1,5 @@
 .container {
-  background: var(--background-secondary);
+  background: var(--background-primary);
   color: var(--secondary);
   text-align: center;
   padding: 2rem;
@@ -31,8 +31,8 @@
   border: 1px solid;
   border-color: var(--white);
   border-radius: 5px;
-  background: var(--background-secondary);
-  transition: outline .5s ease-in-out;
+  background: var(--background-primary);
+  transition: outline 0.5s ease-in-out;
   outline: 1px solid transparent;
   flex-wrap: wrap;
   row-gap: 1rem;

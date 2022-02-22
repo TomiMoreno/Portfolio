@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Project from "./Project";
 import styles from "../styles/components/Projects.module.css";
-import SvgCurve from "./SvgCurve";
 import { projectList } from "../data/Projects";
 import ButtonIcon from "./ButtonIcon";
 
@@ -28,7 +27,6 @@ export default function Projects() {
             Mostrar más
           </ButtonIcon>
         )}
-        <SvgCurve />
       </main>
     </>
   );

@@ -41,6 +41,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -74,4 +75,3 @@ h3 {
 .colorGreen {
   color: var(--green);
 }
-
