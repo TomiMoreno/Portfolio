@@ -75,3 +75,11 @@ h3 {
 .colorGreen {
   color: var(--green);
 }
+
+.active {
+  color: var(--accent);
+}
+
+.unactive {
+  color: var(--gray);
+}

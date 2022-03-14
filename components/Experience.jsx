@@ -1,3 +1,4 @@
+import { useIntl, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useMakeScrollable } from "../hooks/useScrollIntoView";
 import styles from "../styles/components/Experience.module.css";
@@ -5,32 +6,49 @@ const EXPERIENCIA = [
   {
     id: 1,
     company: "Dreamcode",
-    title: "Desarrollador fullstack",
-    started: "Ago. 2021",
-    ended: "Actualmente",
+    title: "fullstack-developer",
+    started: "2021-08-01T03:00:00.000Z",
+    ended: "currently",
     link: "https://www.dreamcode.io/",
   },
   {
     id: 2,
     company: "SyrFox",
-    title: "Desarrollador fullstack",
-    started: "Dic. 2020",
-    ended: "Ago. 2021",
+    title: "fullstack-developer",
+    started: "2020-11-01T03:00:00.000Z",
+    ended: "2021-08-01T03:00:00.000Z",
     link: "https://www.linkedin.com/in/syr-fox-s-a-8623952b",
   },
 ];
 
 export default function Experience() {
-  const ref = useMakeScrollable("aboutMe");
+  const t = useTranslations("experience");
+  const intl = useIntl();
+  const ref = useMakeScrollable("experience");
   return (
     <section className={styles.container} ref={ref}>
-      <h2>Experiencia</h2>
+      <h2>{t("experience")}</h2>
       <ul className={styles.experienceUl}>
-        {EXPERIENCIA.map(
-          ({ id, company, started, ended, link, title }, index) => (
+        {EXPERIENCIA.map(({ company, started, ended, link, title }, index) => {
+          const startDate = intl
+            .formatDateTime(new Date(started), {
+              year: "numeric",
+              month: "short",
+            })
+            .replace(/^./, (str) => str.toUpperCase());
+          const endDate =
+            ended === "currently"
+              ? t("currently")
+              : intl
+                  .formatDateTime(new Date(ended), {
+                    year: "numeric",
+                    month: "short",
+                  })
+                  .replace(/^./, (str) => str.toUpperCase());
+          return (
             <li key={index}>
               <div className={styles.col}>
-                <p>{title}</p>
+                <p>{t(title)}</p>
                 <h3>
                   <Link href={link}>
                     <a target="_blank" rel="noopener">
@@ -41,12 +59,12 @@ export default function Experience() {
               </div>
               <p>
                 <span>
-                  {started} - {ended}
+                  {startDate} - {endDate}
                 </span>
               </p>
             </li>
-          )
-        )}
+          );
+        })}
       </ul>
     </section>
   );

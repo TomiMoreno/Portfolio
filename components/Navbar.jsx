@@ -1,7 +1,10 @@
+import { useTranslations } from "next-intl";
 import { scrollTo } from "../hooks/useScrollIntoView";
 import styles from "../styles/components/Navbar.module.css";
+import ChangeLanguage from "./ChangeLanguage";
 
 export default function Navbar() {
+  const t = useTranslations("header");
   return (
     <nav className={styles.navbar}>
       <h3 className="colorGreen">Tomás</h3>
@@ -16,13 +19,19 @@ export default function Navbar() {
             className={styles.listElement}
             onClick={() => scrollTo("projects")}
           >
-            Mis proyectos
+            {t("my-projects")}
           </a>
         </li>
         <li>
-          <a className={styles.listElement} onClick={() => scrollTo("aboutMe")}>
-            Acerca de mi
+          <a
+            className={styles.listElement}
+            onClick={() => scrollTo("experience")}
+          >
+            {t("experience")}
           </a>
+        </li>
+        <li>
+          <ChangeLanguage />
         </li>
       </ul>
       <label htmlFor="nav-toggle" className={styles.navToggleLabel}>

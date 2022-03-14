@@ -1,3 +1,4 @@
+import { useLocale, useTranslations } from "next-intl";
 import Head from "next/head";
 import Bubbles from "../components/Bubbles";
 import Contact from "../components/Contact";
@@ -7,23 +8,22 @@ import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
 
 export default function Home() {
+  const t = useTranslations("meta");
+  const locale = useLocale();
   return (
     <>
       <Head>
-        <title>Tomás Canosa Moreno | Frontend Developer</title>
+        <title>Tomás Canosa Moreno | Fullstack developer</title>
         <meta name="theme-color" content="#222831" />
-        <meta
-          name="description"
-          content="Desarrollador frontend enfofacdo en React y Next"
-        />
+        <meta name="description" content={t("description")} />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Tomás Canosa Moreno" key="title" />
         <meta
           property="og:description"
-          content="Desarrollador frontend enfocado en React y Next"
+          content={t("description")}
           key="description"
         />
-        <meta property="og:locale" content="es_ES" key="locale" />
+        <meta property="og:locale" content={locale} key="locale" />
         <meta property="og:type" content="website" key="type" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://www.tomimoreno.com" />
@@ -33,7 +33,18 @@ export default function Home() {
       <Header />
       <Projects />
       <Experience />
-      <Contact/>
+      <Contact />
     </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      // You can get the messages from anywhere you like. The recommended
+      // pattern is to put them in JSON files separated by language and read
+      // the desired one based on the `locale` received from Next.js.
+      messages: (await import(`../locales/${locale}.json`)).default,
+    },
+  };
 }

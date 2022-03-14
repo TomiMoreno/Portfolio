@@ -4,14 +4,16 @@ import styles from "../styles/components/Projects.module.css";
 import { projectList } from "../data/Projects";
 import ButtonIcon from "./ButtonIcon";
 import { useMakeScrollable } from "../hooks/useScrollIntoView";
+import { useTranslations } from "next-intl";
 
 export default function Projects() {
+  const t = useTranslations("projects");
   const [numberOfProjects, setNumberOfProjects] = useState(3);
   const ref = useMakeScrollable("projects");
   return (
     <>
       <main className={styles.proyectos} ref={ref}>
-        <h2 className={styles.title}>Mis proyectos</h2>
+        <h2 className={styles.title}>{t("my-projects")}</h2>
         <div className={styles.container}>
           {projectList.slice(0, numberOfProjects).map((project, i) => (
             <Project isOdd={i % 2 === 1} key={`project-${i}`} {...project} />
@@ -26,7 +28,7 @@ export default function Projects() {
               setNumberOfProjects((n) => n + 3);
             }}
           >
-            Mostrar más
+            {t("show-more")}
           </ButtonIcon>
         )}
       </main>

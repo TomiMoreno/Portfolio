@@ -1,0 +1,26 @@
+{
+  "header": {
+    "my-projects": "Mis proyectos",
+    "experience": "Acerca de mi",
+    "fullstack-developer": "Desarrollador fullstack",
+    "change-language": "Cambiar idioma"
+  },
+  "projects": {
+    "my-projects": "Mis proyectos",
+    "visit-code": "Visitar código",
+    "visit-page": "Visitar página",
+    "show-more": "Show more"
+  },
+  "experience": {
+    "experience": "Experiencia",
+    "currently": "Actualmente",
+    "fullstack-developer": "Desarrollador fullstack"
+  },
+  "contact-me": {
+    "work-with-me": "¿Quieres trabajar conmigo?",
+    "contact-me": "Contactame"
+  },
+  "meta": {
+    "description": "Fullstack developer"
+  }
+}

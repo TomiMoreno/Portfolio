@@ -1,8 +1,10 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/components/Header.module.css";
 
 export default function Header() {
+  const t = useTranslations("header");
   return (
     <>
       <header className={`${styles.header} ${styles.split}`}>
@@ -17,7 +19,7 @@ export default function Header() {
           <h1 className={styles.title}>
             <span className="colorGreen">Tomás</span> Canosa Moreno
           </h1>
-          <h2>Desarrollador fullstack</h2>
+          <h2>{t("fullstack-developer")}</h2>
           <ul className={styles.attributes}>
             <li>
               <Link href="https://github.com/TomiMoreno">

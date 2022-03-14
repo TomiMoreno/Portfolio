@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const projectVariants = {
   visible: { x: 0 },
@@ -21,6 +22,7 @@ export default function Project({
   technologies,
   isOdd,
 }) {
+  const t = useTranslations("projects");
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: "-100px",
@@ -43,7 +45,7 @@ export default function Project({
         initial={isOdd ? "hiddenOdd" : "hiddenEven"}
       >
         <div className={styles.imgContainer}>
-          <Image layout="fill" src={imageURL} alt={name}/>
+          <Image layout="fill" src={imageURL} alt={name} />
         </div>
         <div className={styles.content}>
           <h2>{name}</h2>
@@ -55,14 +57,14 @@ export default function Project({
               imageAlt="Github logo"
               imageURL="/github.svg"
             >
-              Visitar código
+              {t("visit-code")}
             </ButtonIcon>
             <ButtonIcon
               href={pageURL}
               imageAlt="Web logo"
               imageURL="/globe.svg"
             >
-              Visitar página
+              {t("visit-page")}
             </ButtonIcon>
           </div>
         </div>
