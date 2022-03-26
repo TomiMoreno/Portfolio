@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
 
 const projectVariants = {
   visible: { x: 0 },
@@ -14,20 +15,25 @@ const projectVariants = {
 };
 
 export default function Project({
-  name,
+  title,
+  titleEs,
   description,
+  descriptionEs,
   codeURL,
   pageURL,
   imageURL,
-  technologies,
+  technologies = [],
   isOdd,
 }) {
+  const { locale } = useRouter();
   const t = useTranslations("projects");
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: "-100px",
   });
   const controls = useAnimation();
+  const translatedTitle = locale === "es" ? titleEs : title;
+  const translatedDescription = locale === "es" ? descriptionEs : description;
 
   useEffect(() => {
     if (inView) {
@@ -45,11 +51,11 @@ export default function Project({
         initial={isOdd ? "hiddenOdd" : "hiddenEven"}
       >
         <div className={styles.imgContainer}>
-          <Image layout="fill" src={imageURL} alt={name} />
+          <Image layout="fill" src={imageURL} alt={translatedTitle} />
         </div>
         <div className={styles.content}>
-          <h2>{name}</h2>
-          <p>{description}</p>
+          <h2>{translatedTitle}</h2>
+          <p>{translatedDescription}</p>
           <Technologies technologies={technologies} />
           <div className={styles.btnContainer}>
             <ButtonIcon

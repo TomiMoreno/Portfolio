@@ -1,4 +1,4 @@
-This is my portfolio, made with Next.js 💼
+This is my portfolio, made with Next.js, and Notion as a CMS 💼
 
 ## Setting up project
 
@@ -9,7 +9,9 @@ npm install
 # or
 yarn install
 ```
-Then: 
+
+Then:
+
 ```bash
 npm run dev
 # or

@@ -6,8 +6,9 @@ import Experience from "../components/Experience";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
+import { getProjects } from "../services/notionService";
 
-export default function Home() {
+export default function Home({ projects }) {
   const t = useTranslations("meta");
   const locale = useLocale();
   return (
@@ -31,7 +32,7 @@ export default function Home() {
       <Bubbles />
       <Navbar />
       <Header />
-      <Projects />
+      <Projects projects={projects} />
       <Experience />
       <Contact />
     </>
@@ -39,12 +40,11 @@ export default function Home() {
 }
 
 export async function getStaticProps({ locale }) {
+  const projects = await getProjects();
   return {
     props: {
-      // You can get the messages from anywhere you like. The recommended
-      // pattern is to put them in JSON files separated by language and read
-      // the desired one based on the `locale` received from Next.js.
       messages: (await import(`../locales/${locale}.json`)).default,
+      projects,
     },
   };
 }

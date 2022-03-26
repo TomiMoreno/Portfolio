@@ -6,16 +6,16 @@ import ButtonIcon from "./ButtonIcon";
 import { useMakeScrollable } from "../hooks/useScrollIntoView";
 import { useTranslations } from "next-intl";
 
-export default function Projects() {
-  const t = useTranslations("projects");
+export default function Projects({ projects }) {
   const [numberOfProjects, setNumberOfProjects] = useState(3);
+  const t = useTranslations("projects");
   const ref = useMakeScrollable("projects");
   return (
     <>
       <main className={styles.proyectos} ref={ref}>
         <h2 className={styles.title}>{t("my-projects")}</h2>
         <div className={styles.container}>
-          {projectList.slice(0, numberOfProjects).map((project, i) => (
+          {projects.slice(0, numberOfProjects).map((project, i) => (
             <Project isOdd={i % 2 === 1} key={`project-${i}`} {...project} />
           ))}
         </div>
