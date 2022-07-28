@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Project from "./Project";
 import styles from "../styles/components/Projects.module.css";
-import { projectList } from "../data/Projects";
 import ButtonIcon from "./ButtonIcon";
 import { useMakeScrollable } from "../hooks/useScrollIntoView";
 import { useTranslations } from "next-intl";
@@ -16,10 +15,10 @@ export default function Projects({ projects }) {
         <h2 className={styles.title}>{t("my-projects")}</h2>
         <div className={styles.container}>
           {projects.slice(0, numberOfProjects).map((project, i) => (
-            <Project isOdd={i % 2 === 1} key={`project-${i}`} {...project} />
+            <Project isOdd={i % 2 === 1} key={project.id} {...project} />
           ))}
         </div>
-        {numberOfProjects < projectList.length && (
+        {numberOfProjects < projects.length && (
           <ButtonIcon
             className={styles.showMore}
             imageURL="add.svg"

@@ -50,9 +50,6 @@ export default function Project({
         variants={projectVariants}
         initial={isOdd ? "hiddenOdd" : "hiddenEven"}
       >
-        <div className={styles.imgContainer}>
-          <Image layout="fill" src={imageURL} alt={translatedTitle} />
-        </div>
         <div className={styles.content}>
           <h2>{translatedTitle}</h2>
           <p>{translatedDescription}</p>

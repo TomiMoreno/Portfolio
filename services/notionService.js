@@ -24,6 +24,7 @@ function sanitizeProject(project) {
       codeURL,
       pageURL,
       imageURL,
+      technologies,
     },
   } = project;
 
@@ -36,6 +37,7 @@ function sanitizeProject(project) {
     codeURL: codeURL?.url,
     pageURL: pageURL?.url,
     imageURL: imageURL?.url,
+    technologies: technologies?.multi_select,
   };
 
   return nullifyFalsyValuesOfObject(sanitizedProject);
