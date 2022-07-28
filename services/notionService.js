@@ -23,7 +23,6 @@ function sanitizeProject(project) {
       DescriptionEs,
       codeURL,
       pageURL,
-      imageURL,
       technologies,
     },
   } = project;
@@ -36,7 +35,6 @@ function sanitizeProject(project) {
     descriptionEs: DescriptionEs.rich_text?.[0]?.text?.content,
     codeURL: codeURL?.url,
     pageURL: pageURL?.url,
-    imageURL: imageURL?.url,
     technologies: technologies?.multi_select,
   };
 
