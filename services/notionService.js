@@ -8,6 +8,12 @@ export async function getProjects() {
   const projects = await notion.databases.query({
     database_id,
     sorts: [{ property: "Order", direction: "ascending" }],
+    filter: {
+      property: "published",
+      checkbox: {
+        equals: true,
+      },
+    },
   });
   const sanitizedProjects = projects.results.map(sanitizeProject);
   return sanitizedProjects;
