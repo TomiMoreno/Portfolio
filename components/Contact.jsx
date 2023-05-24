@@ -8,7 +8,7 @@ export default function Contact() {
     <div className={styles.container}>
       <h2>{t("work-with-me")}</h2>
       <ButtonIcon
-        href="https://linkedin/in/tomimoreno"
+        href="https://linkedin.com/in/tomimoreno"
         imageURL="/linkedin.svg"
         imageAlt="LinkedIn"
       >
