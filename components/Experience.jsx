@@ -50,10 +50,8 @@ export default function Experience() {
               <div className={styles.col}>
                 <p>{t(title)}</p>
                 <h3>
-                  <Link href={link}>
-                    <a target="_blank" rel="noopener">
+                  <Link href={link} target="_blank" rel="noopener">
                       {company}
-                    </a>
                   </Link>
                 </h3>
               </div>
