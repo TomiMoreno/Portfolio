@@ -22,7 +22,13 @@ export default function Header() {
           <h2>{t("fullstack-developer")}</h2>
           <ul className={styles.attributes}>
             <li>
-              <Link href="https://github.com/TomiMoreno" className="flex" target="_blank" rel="noopener">
+              <Link
+                href="https://github.com/TomiMoreno"
+                className="flex"
+                target="_blank"
+                rel="noopener"
+              >
+                <>
                   <Image
                     width={32}
                     height={32}
@@ -30,10 +36,17 @@ export default function Header() {
                     alt="Github logo"
                   />
                   <span>Github</span>
+                </>
               </Link>
             </li>
             <li>
-              <Link href="https://www.linkedin.com/in/tomimoreno"  className="flex" target="_blank" rel="noopener">
+              <Link
+                href="https://www.linkedin.com/in/tomimoreno"
+                className="flex"
+                target="_blank"
+                rel="noopener"
+              >
+                <>
                   <Image
                     width={32}
                     height={32}
@@ -41,6 +54,7 @@ export default function Header() {
                     alt="Linkedin logo"
                   />
                   <span>LinkedIn</span>
+                </>
               </Link>
             </li>
           </ul>
