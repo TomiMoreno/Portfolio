@@ -4,15 +4,20 @@ import { useMakeScrollable } from "../hooks/useScrollIntoView";
 import styles from "../styles/components/Experience.module.css";
 const EXPERIENCIA = [
   {
-    id: 1,
+    company: "Boomerang",
+    title: "frontend-developer",
+    started: "2023-11-01T03:00:00.000Z",
+    ended: "currently",
+    link: "https://thanksboomerang.com/",
+  },
+  {
     company: "Dreamcode",
     title: "fullstack-developer",
     started: "2021-08-01T03:00:00.000Z",
-    ended: "currently",
+    ended: "2023-11-01T03:00:00.000Z",
     link: "https://www.dreamcode.io/",
   },
   {
-    id: 2,
     company: "SyrFox",
     title: "fullstack-developer",
     started: "2020-11-01T03:00:00.000Z",
@@ -46,12 +51,12 @@ export default function Experience() {
                   })
                   .replace(/^./, (str) => str.toUpperCase());
           return (
-            <li key={index}>
+            <li key={company}>
               <div className={styles.col}>
                 <p>{t(title)}</p>
                 <h3>
                   <Link href={link} target="_blank" rel="noopener">
-                      {company}
+                    {company}
                   </Link>
                 </h3>
               </div>
