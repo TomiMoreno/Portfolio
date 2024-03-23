@@ -1,13 +1,34 @@
 import { useTranslations } from "next-intl";
-import { scrollTo } from "../hooks/useScrollIntoView";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "../styles/components/Navbar.module.css";
 import ChangeLanguage from "./ChangeLanguage";
 
+const NAVBAR_LINKS = [
+  {
+    name: "my-projects",
+    href: "/#projects",
+  },
+];
+
 export default function Navbar() {
   const t = useTranslations("header");
+  const router = useRouter();
+
+  const route = router.pathname;
+  const locale = router.locale;
+
+  console.log({
+    route,
+    locale,
+  })
+
+  const isNotHome = route !== `/`;
   return (
     <nav className={styles.navbar}>
+      <Link href={`/`}>
       <h3 className="colorGreen">Tomás</h3>
+      </Link>
       <input
         type="checkbox"
         id="nav-toggle"
@@ -15,20 +36,12 @@ export default function Navbar() {
       ></input>
       <ul className={styles.list}>
         <li>
-          <a
+          <Link
             className={styles.listElement}
-            onClick={() => scrollTo("projects")}
+            href={`/gallery`}
           >
-            {t("my-projects")}
-          </a>
-        </li>
-        <li>
-          <a
-            className={styles.listElement}
-            onClick={() => scrollTo("experience")}
-          >
-            {t("experience")}
-          </a>
+            {t("gallery")}
+          </Link>
         </li>
         <li>
           <ChangeLanguage />

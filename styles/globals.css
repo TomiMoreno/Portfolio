@@ -81,5 +81,5 @@ h3 {
 }
 
 .unactive {
-  color: var(--gray);
+  opacity: 0.5;
 }

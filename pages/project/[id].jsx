@@ -1,15 +1,22 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function GalleryProject() {
   const router = useRouter();
   const { id } = router.query;
+  
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    }
+  }
+  , []);
 
   return (
-    <main style={{
-      overflow: "hidden",
-    }}>
-      {/* go back */}
+    <main >
       <Link 
         style={{
           position: "fixed",
