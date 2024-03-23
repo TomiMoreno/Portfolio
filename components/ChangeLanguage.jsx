@@ -6,10 +6,10 @@ export default function ChangeLanguage() {
   return (
     <div>
       <Link href={{ pathname, query }} as={asPath} locale="es" className={locale === "es" ? "active" : "unactive"}>
-        ES
+        <img src="/argentina.png" alt="Argentinian flag" width={20} height={20} />
       </Link>
       <Link href={{ pathname, query }} as={asPath} locale="en" className={locale === "en" ? "active" : "unactive"}>
-       EN
+        <img src="/united-states.png" alt="United States flag" width={20} height={20} />
       </Link>
     </div>
   );
