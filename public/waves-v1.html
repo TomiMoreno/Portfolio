@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>p5.js Project</title>
+    <script src="./p5.min.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background-color: #000;
+        min-height: 100vh;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let particles = [];
+      const n = 5000;
+      let noiseScale = 0.001;
+
+      class Particle {
+        x = random(width);
+        y = random(height);
+        color = [random(255), 255, 255, 50];
+        r = 10;
+
+        update = function (angle) {
+          const move = noise(
+            this.x * noiseScale,
+            this.y * noiseScale,
+            frameCount * noiseScale * noiseScale
+          );
+          this.x += cos(TAU * move);
+          this.y += sin(TAU * move);
+          this.check();
+        };
+
+        show = function () {
+          stroke(this.color, 255, 255, 50);
+          point(this.x, this.y);
+        };
+
+        check = function () {
+          // let colision = false;
+          // if (this.x > width) {
+          //   colision = true;
+          // } else if (this.x < 0) {
+          //   colision = true;
+          // }
+          // if (this.y > height) {
+          //   colision = true;
+          // } else if (this.y < 0) {
+          //   colision = true;
+          // }
+          // if (colision) {
+          //   this.x = random(width);
+          //   this.y = random(height);
+          // }
+          if (this.x > width) {
+            this.x = 0;
+          } else if (this.x < 0) {
+            this.x = width;
+          } else if (this.y > height) {
+            this.y = 0;
+          } else if (this.y < 0) {
+            this.y = height;
+          }
+        };
+      }
+
+      function setup() {
+        background(0, 20);
+        createCanvas(windowWidth, windowHeight);
+        reset();
+      }
+
+      function draw() {
+        background(0, 5);
+        for (let i = 0; i < n; i++) {
+          particles[i].update();
+          particles[i].show();
+        }
+        particles[0].show();
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+        reset();
+      }
+
+      function mousePressed() {
+        noLoop();
+      }
+
+      function mouseReleased() {
+        reset();
+      }
+
+      function reset() {
+        background(0);
+        particles = [];
+        for (let i = 0; i < n; i++) {
+          particles.push(new Particle());
+        }
+        particles[0].color = [255, 0, 0, 255];
+        particles[0].x = width - 100;
+        particles[0].y = height / 2;
+        particles[0].r = 20;
+        loop();
+      }
+
+      // on plus
+      function keyPressed() {
+        if (keyCode === 107) {
+          noiseScale += 0.01;
+        }
+        if (keyCode === 109) {
+          noiseScale -= 0.01;
+        }
+      }
+    </script>
+  </body>
+</html>

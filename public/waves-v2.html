@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>p5.js Project</title>
+    <script src="./p5.min.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background-color: #000;
+        min-height: 100vh;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let particles = [];
+      const n = 10000;
+      const noiseScale = 0.01;
+
+      class Particle {
+        x = random(width);
+        y = random(height);
+        color = [random(255), random(255), random(255), 255];
+
+        update = function (angle) {
+          const move = noise(
+            this.x * noiseScale,
+            this.y * noiseScale,
+            frameCount * noiseScale
+          );
+          const xMove = cos(map(move, 0, 1, -TAU, TAU));
+          this.x += xMove;
+          this.y += sin(map(move, 0, 1, 0, TAU));
+          this.check();
+        };
+
+        show = function () {
+          stroke(this.color);
+          point(this.x, this.y, 10);
+        };
+
+        check = function () {
+          let colision = false;
+          if (this.x > width) {
+            colision = true;
+          } else if (this.x < 0) {
+            colision = true;
+          }
+          if (this.y > height) {
+            colision = true;
+          } else if (this.y < 0) {
+            colision = true;
+          }
+          if (colision) {
+            this.x = random(width);
+            this.y = random(height);
+          }
+        };
+      }
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+        reset();
+      }
+
+      function draw() {
+        background(0, 20);
+        for (let i = 0; i < n; i++) {
+          particles[i].update();
+          particles[i].show();
+        }
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+
+      function mousePressed() {
+        noLoop();
+      }
+
+      function mouseReleased() {
+        reset();
+      }
+
+      function reset() {
+        background(0);
+        particles = [];
+        for (let i = 0; i < n; i++) {
+          particles.push(new Particle());
+        }
+        loop();
+      }
+    </script>
+  </body>
+</html>
