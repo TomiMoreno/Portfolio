@@ -1,46 +1,35 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import Seo from "../../components/Seo";
+import styles from "../../styles/components/GalleryProject.module.css";
+import { GALLERY_PROJECTS } from "../../utils/galleryProjects";
+import { getMessages } from "../../utils/getMessages";
 
-export default function GalleryProject() {
-  const router = useRouter();
-  const { id } = router.query;
-  
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = "auto";
-    }
-  }
-  , []);
-
+export default function GalleryProjectPage({ id, title }) {
+  const t = useTranslations("gallery");
   return (
-    <main >
-      <Link 
-        style={{
-          position: "fixed",
-          top: "10px",
-          left: "10px",
-          zIndex: "1000",
-          width: 20,
-          height: 20,
-        }}
-        href={"/gallery"}
-      >
-        <img src="/back.svg" alt="Back" />
+    <main className={styles.fullscreen}>
+      <Seo title={title} description={title} noindex />
+      <Link href="/gallery" className={styles.back} aria-label={t("back")}>
+        <img src="/back.svg" alt="" width={24} height={24} />
       </Link>
-      <iframe src={
-        `/${id}`
-      } style={{ width: "100%", height: "100vh", border: "none" }}></iframe>
+      <iframe src={`/${id}`} title={title} />
     </main>
   );
 }
 
-export async function getServerSideProps({ locale }) {
+// Only known sketches get a page: the id is used as an iframe URL, so it must
+// never come straight from the address bar.
+export async function getStaticPaths({ locales }) {
   return {
-    props: {
-      messages: (await import(`../../locales/${locale}.json`)).default,
-    },
+    paths: locales.flatMap((locale) =>
+      GALLERY_PROJECTS.map(({ id }) => ({ params: { id }, locale }))
+    ),
+    fallback: false,
   };
+}
+
+export async function getStaticProps({ locale, params }) {
+  const { id, title } = GALLERY_PROJECTS.find(({ id }) => id === params.id);
+  return { props: { id, title, messages: await getMessages(locale) } };
 }

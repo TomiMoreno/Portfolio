@@ -1,83 +1,58 @@
 .header {
-  background-blend-mode: darken;
-  background-color: var(--background-color);
-  min-height: 100vh;
-  background-size: cover;
-  color: var(--secondary);
-  overflow: hidden;
-}
-
-.title {
-  text-align: center;
-  font-weight: 500;
-  font-size: 3em;
-}
-.container {
-  padding: 2em;
-  z-index: 1;
+  max-width: var(--content-width);
+  min-height: min(38rem, calc(100svh - var(--nav-height)));
+  margin-inline: auto;
+  padding: 3rem var(--gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  border-radius: 0.5em;
-  margin: 1em;
-  gap: 1em;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
 }
 
-.attributes {
+.photo {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 50%);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.role {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+.links {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
-  font-size: 1.5em;
-}
-.attributes > li > a {
-  display: flex;
-  gap: 0.25em;
-  align-items: center;
-  padding: 0.5em;
-}
-.container a {
-  transition: color 0.4s;
-  cursor: pointer;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 
-.container a:hover {
-  color: var(--green);
-}
-.photo {
-  border-radius: 50%;
-  width: 20em;
-  box-shadow: #0000007a 0 0 11px 9px;
-  margin: 2em 0;
-}
-
-.photoContainer {
-  z-index: 1;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .attributes {
-    display: block;
-  }
-  .container {
-    font-size: 0.8em;
+@media (min-width: 48em) {
+  .header {
+    flex-direction: row;
+    gap: clamp(3rem, 8vw, 6rem);
+    text-align: left;
   }
   .photo {
-    width: 50%;
+    width: 20rem;
+    height: 20rem;
   }
-}
-
-.split {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (min-width: 40em) {
-  .split {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+  .intro {
+    align-items: flex-start;
+  }
+  .links {
+    justify-content: flex-start;
   }
 }

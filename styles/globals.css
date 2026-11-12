@@ -1,85 +1,119 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  scroll-behavior: smooth;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  background: var(--background-color);
-  color: var(--secondary);
-}
-#__next {
-  position: relative;
-  overflow-x: hidden;
+:root {
+  --black: rgb(0 0 0);
+  --gray: rgb(57 62 70);
+  --white: rgb(238 238 238);
+  --green: rgb(0 181 63);
+
+  --background-color: var(--black);
+  --surface: rgb(255 255 255 / 4%);
+  --border: rgb(255 255 255 / 14%);
+  --border-strong: rgb(255 255 255 / 45%);
+  --text: var(--white);
+  --text-muted: rgb(238 238 238 / 68%);
+  --accent: var(--green);
+  --accent-text: rgb(46 204 104);
+
+  --content-width: 64rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --nav-height: 3.5rem;
+  color-scheme: dark;
 }
 
-:root {
-  --black: rgb(0, 0, 0);
-  --dark-blue: rgb(34, 40, 49);
-  --gray: rgb(57, 62, 70);
-  --teal: rgb(0, 173, 181);
-  --white: rgb(238, 238, 238);
-  --red: rgb(255, 0, 0);
-  --linkedin-blue: rgb(34 102 194);
-  --green: rgb(0 181 63);
-  --primary: var(--dark-blue);
-  --primary-dark: rgb(28 31 35);
-  --primary-light: var(--gray);
-  --secondary: var(--white);
-  --accent: var(--green);
-  --background-color: var(--black);
-  --background-secondary: var(--gray);
-  font-size: 16px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--background-color);
+  /* Soft glow behind the hero, replacing the old animated blur bubble. */
+  background-image: radial-gradient(
+    60rem 40rem at 15% 20rem,
+    rgb(57 62 70 / 55%),
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+}
+
 a {
   color: inherit;
   text-decoration: none;
-  cursor: pointer;
 }
 
 button {
-  font: 400 1rem Roboto;
+  font: inherit;
+  color: inherit;
 }
-* {
-  box-sizing: border-box;
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.2;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
 }
 
 h2 {
-  font-weight: 500;
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
-h3 {
-  font-weight: 500;
+:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-.colorRed {
-  color: var(--red);
+.section {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 7vw, 4.5rem) var(--gutter);
 }
 
-.colorBlue {
-  color: var(--blue);
+.section > h1,
+.section > h2 {
+  margin-bottom: 1.5rem;
 }
 
 .colorGreen {
-  color: var(--green);
+  color: var(--accent-text);
 }
 
-.active {
-  color: var(--accent);
-}
-
-.unactive {
-  opacity: 0.5;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

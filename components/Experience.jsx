@@ -1,13 +1,12 @@
-import { useIntl, useTranslations } from "next-intl";
-import Link from "next/link";
-import { useMakeScrollable } from "../hooks/useScrollIntoView";
+import { useFormatter, useTranslations } from "next-intl";
 import styles from "../styles/components/Experience.module.css";
-const EXPERIENCIA = [
+
+const EXPERIENCE = [
   {
     company: "Boomerang",
     title: "frontend-developer",
     started: "2023-11-01T03:00:00.000Z",
-    ended: "currently",
+    ended: null,
     link: "https://thanksboomerang.com/",
   },
   {
@@ -26,49 +25,46 @@ const EXPERIENCIA = [
   },
 ];
 
+const capitalize = (text) => text.replace(/^./, (char) => char.toUpperCase());
+
 export default function Experience() {
   const t = useTranslations("experience");
-  const intl = useIntl();
-  const ref = useMakeScrollable("experience");
+  const format = useFormatter();
+  const formatMonth = (date) =>
+    capitalize(
+      format.dateTime(new Date(date), { year: "numeric", month: "short" })
+    );
+
   return (
-    <section className={styles.container} ref={ref}>
-      <h2>{t("experience")}</h2>
-      <ul className={styles.experienceUl}>
-        {EXPERIENCIA.map(({ company, started, ended, link, title }, index) => {
-          const startDate = intl
-            .formatDateTime(new Date(started), {
-              year: "numeric",
-              month: "short",
-            })
-            .replace(/^./, (str) => str.toUpperCase());
-          const endDate =
-            ended === "currently"
-              ? t("currently")
-              : intl
-                  .formatDateTime(new Date(ended), {
-                    year: "numeric",
-                    month: "short",
-                  })
-                  .replace(/^./, (str) => str.toUpperCase());
-          return (
-            <li key={company}>
-              <div className={styles.col}>
-                <p>{t(title)}</p>
-                <h3>
-                  <Link href={link} target="_blank" rel="noopener">
-                    {company}
-                  </Link>
-                </h3>
-              </div>
-              <p>
-                <span>
-                  {startDate} - {endDate}
-                </span>
-              </p>
-            </li>
-          );
-        })}
-      </ul>
+    <section
+      id="experience"
+      className="section"
+      aria-labelledby="experience-title"
+    >
+      <h2 id="experience-title">{t("experience")}</h2>
+      <ol className={styles.list}>
+        {EXPERIENCE.map(({ company, started, ended, link, title }) => (
+          <li key={company} className={styles.item}>
+            <div>
+              <h3>
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                  {company}
+                </a>
+              </h3>
+              <p>{t(title)}</p>
+            </div>
+            <p className={styles.dates}>
+              <time dateTime={started.slice(0, 7)}>{formatMonth(started)}</time>
+              {" – "}
+              {ended ? (
+                <time dateTime={ended.slice(0, 7)}>{formatMonth(ended)}</time>
+              ) : (
+                t("currently")
+              )}
+            </p>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }

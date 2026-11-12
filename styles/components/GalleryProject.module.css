@@ -1,38 +1,78 @@
-.project {
-  background: rgb(0 0 0 / 61%);
-  backdrop-filter: blur(5px);
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.intro {
+  margin: -0.75rem 0 1.5rem;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
   gap: 1rem;
-  margin: auto;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  box-shadow: 1px 1px 6px 1px rgba(69, 69, 69, 0.5);
-  color: #ffffff; /* Assuming a light text for the dark background */
-  width: 100%;
+}
+
+.project {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
 }
 
 .iframe {
+  display: block;
   width: 100%;
-  height: 300px;
+  height: 18rem;
   border: none;
-  margin-bottom: 20px;
-  border-radius: 8px; /* Optional: if you want the iframe itself to also have rounded corners */
+  /* The preview is decorative; clicks should not pause the sketch. */
+  pointer-events: none;
 }
 
-.title,
-.description {
-  text-align: center;
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
 }
 
-.title {
-  margin: 10px 0;
-  color: #ffffff; /* Light color text */
+.body h2 {
+  font-size: 1.2rem;
 }
 
-.description {
-  margin: 0;
-  color: #d1d1d1; /* Slightly dimmer color for the description */
+.body p {
+  color: var(--text-muted);
+}
+
+.link {
+  align-self: flex-start;
+  color: var(--accent-text);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.fullscreen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+}
+
+.fullscreen iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.back {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
+  display: flex;
+  padding: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.back:hover {
+  opacity: 1;
 }

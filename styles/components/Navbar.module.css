@@ -1,98 +1,71 @@
 .navbar {
-  padding: 1rem;
   position: sticky;
-  top: -1px;
-  width: 100%;
-  background: rgb(0,0,0);
-  z-index: 2;
+  top: 0;
+  z-index: 10;
+  min-height: var(--nav-height);
+  padding: 0.5rem var(--gutter);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  color: var(--secondary);
+  gap: 0.25rem 1rem;
+  background: rgb(0 0 0 / 70%);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--accent-text);
 }
 
 .list {
-  list-style: none;
-  position: absolute;
-  top: 98%;
-  left: 0;
-  width: 100%;
-  display: none;
-  animation: growDown 300ms ease-in-out forwards;
-  transform-origin: top center;
-  margin: 0;
-  padding: 0;
-  background: black;
-}
-.list li {
-  transition: color 0.25s ease-in;
-  display: flex;
-}
-.list a {
-  padding: 1rem;
-  width: 100%;
-}
-.list li:hover {
-  color: var(--accent);
-}
-
-.navToggleLabel {
-  width: 2em;
-  height: 1em;
   display: flex;
   align-items: center;
+  gap: clamp(0.25rem, 2vw, 1rem);
 }
-.navToggleLabel span,
-.navToggleLabel span::before,
-.navToggleLabel span::after {
+
+.link {
   display: block;
-  background: var(--secondary);
-  height: 2px;
-  width: 2em;
-  border-radius: 2px;
-  position: relative;
+  padding: 0.5rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
 }
-.navToggleLabel span::before,
-.navToggleLabel span::after {
-  content: "";
-  position: absolute;
+
+.link:hover {
+  color: var(--text);
 }
-.navToggleLabel span::before {
-  bottom: calc(0.5em - 1px);
+
+.languages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding-left: 0.5rem;
 }
-.navToggleLabel span::after {
-  top: calc(0.5em - 1px);
+
+.language,
+.languageActive {
+  display: flex;
+  padding: 0.5rem 0.35rem;
+  transition: opacity 0.2s;
 }
-.navToggle {
-  display: none;
+
+.language {
+  opacity: 0.45;
 }
-.navToggle:checked ~ .list {
-  display: block;
+
+.language:hover {
+  opacity: 1;
 }
-@media screen and (min-width: 800px) {
-  .navbar {
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 69%);
+
+@media (max-width: 26rem) {
+  .link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.3rem;
   }
-  .navToggleLabel {
-    display: none;
-  }
-  .list {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    position: unset;
-    width: auto;
-    background: transparent;
-  }
-}
-@keyframes growDown {
-  0% {
-    transform: scaleY(0);
-  }
-  80% {
-    transform: scaleY(1.1);
-  }
-  100% {
-    transform: scaleY(1);
+  .languages {
+    padding-left: 0;
   }
 }

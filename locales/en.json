@@ -1,18 +1,25 @@
 {
-  "header": {
+  "nav": {
+    "projects": "Projects",
+    "experience": "Experience",
     "gallery": "Gallery",
-    "fullstack-developer": "Fullstack developer",
-    "change-language": "Cambiar lenguaje"
+    "contact": "Contact",
+    "home": "Home",
+    "language": "Language",
+    "main": "Main"
+  },
+  "header": {
+    "fullstack-developer": "Fullstack developer"
   },
   "projects": {
     "my-projects": "My projects",
-    "visit-code": "Visit code",
-    "visit-page": "Visit page",
+    "visit-code": "Code",
+    "visit-page": "Live site",
     "show-more": "Show more"
   },
   "experience": {
     "experience": "Experience",
-    "currently": "Currently",
+    "currently": "Present",
     "fullstack-developer": "Fullstack developer",
     "frontend-developer": "Frontend developer"
   },
@@ -20,7 +27,16 @@
     "work-with-me": "Want to work with me?",
     "contact-me": "Contact me"
   },
+  "gallery": {
+    "title": "Gallery",
+    "intro": "Generative sketches made with p5.js.",
+    "view": "Open full screen",
+    "back": "Back to gallery",
+    "waves-v1": "Particles drifting through a slowly changing Perlin noise field.",
+    "waves-v2": "A denser, more colourful take on the same flow field."
+  },
   "meta": {
-    "description": "Fullstack developer"
+    "description": "Portfolio of Tomás Canosa Moreno, fullstack developer: projects, experience and contact.",
+    "gallery-description": "Generative art sketches by Tomás Canosa Moreno."
   }
 }

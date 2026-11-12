@@ -1,55 +1,33 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import styles from "../styles/components/Navbar.module.css";
 import ChangeLanguage from "./ChangeLanguage";
 
 const NAVBAR_LINKS = [
-  {
-    name: "my-projects",
-    href: "/#projects",
-  },
+  { name: "projects", href: "/#projects" },
+  { name: "experience", href: "/#experience" },
+  { name: "gallery", href: "/gallery" },
 ];
 
 export default function Navbar() {
-  const t = useTranslations("header");
-  const router = useRouter();
-
-  const route = router.pathname;
-  const locale = router.locale;
-
-  console.log({
-    route,
-    locale,
-  })
-
-  const isNotHome = route !== `/`;
+  const t = useTranslations("nav");
   return (
-    <nav className={styles.navbar}>
-      <Link href={`/`}>
-      <h3 className="colorGreen">Tomás</h3>
+    <nav className={styles.navbar} aria-label={t("main")}>
+      <Link href="/" className={styles.brand} aria-label={t("home")}>
+        Tomás
       </Link>
-      <input
-        type="checkbox"
-        id="nav-toggle"
-        className={styles.navToggle}
-      ></input>
       <ul className={styles.list}>
-        <li>
-          <Link
-            className={styles.listElement}
-            href={`/gallery`}
-          >
-            {t("gallery")}
-          </Link>
-        </li>
+        {NAVBAR_LINKS.map(({ name, href }) => (
+          <li key={name}>
+            <Link className={styles.link} href={href}>
+              {t(name)}
+            </Link>
+          </li>
+        ))}
         <li>
           <ChangeLanguage />
         </li>
       </ul>
-      <label htmlFor="nav-toggle" className={styles.navToggleLabel}>
-        <span></span>
-      </label>
     </nav>
   );
 }

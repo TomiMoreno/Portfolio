@@ -2,12 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 2rem;
-  margin: 0;
-  background-color: var(--background-primary);
+  text-align: center;
 }
 
-.container h2 {
-  margin-bottom: 1rem;
+.cta {
+  border-color: var(--accent);
+  background: rgb(0 181 63 / 14%);
+}
+
+.cta:hover {
+  border-color: var(--accent-text);
+  background: rgb(0 181 63 / 26%);
 }
