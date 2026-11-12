@@ -1,53 +1,51 @@
-.split {
-  background: var(--background-color);
-  background: rgb(0 0 0 / 61%);
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: auto;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  max-width: 40rem;
-  box-shadow: 1px 1px 6px 1px rgb(69 69 69 / 50%);
-}
-.btnContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 90%;
-}
-.split:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-.imgContainer {
-  flex: 1;
-  flex-basis: 15rem;
-  max-width: 20rem;
-  box-shadow: rgb(0 0 0 / 5%) 0 0 0 1px;
-  position: relative;
-  min-height: 10rem;
-}
-
-.imgContainer img {
-  object-fit: cover;
-  border-radius: 2rem;
-  overflow: hidden;
-}
-.content {
-  flex: 1;
+.project {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  transition: border-color 0.2s;
 }
 
-@media (min-width: 50em) {
-  .btnContainer {
-    justify-content: none;
+.project:hover {
+  border-color: var(--border-strong);
+}
+
+.project h3 {
+  font-size: 1.2rem;
+}
+
+.project > p {
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.btnContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  /* Keep the links on the card's bottom edge when cards differ in height. */
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Cards fade up as they scroll into view. Browsers without scroll-driven
+   animations simply show them. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .project {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
   }
 }

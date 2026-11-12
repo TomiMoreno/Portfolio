@@ -1,27 +1,13 @@
 .container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  overflow-y: hidden;
-  border-radius: 10em;
   flex-wrap: wrap;
-  color: #220e06;
-  gap: 0.3em;
+  gap: 0.4rem;
 }
 
 .technology {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow-y: hidden;
-  border-radius: 0.5em;
-  padding: 0.2em;
-}
-
-.techLogo {
-  height: 2.5rem;
-  margin: 0.5em;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--tag);
+  background: color-mix(in srgb, var(--tag) 16%, transparent);
 }

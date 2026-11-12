@@ -1,23 +1,41 @@
 import { Client } from "@notionhq/client";
 import { nullifyFalsyValuesOfObject } from "../utils/nullifyFalsyValuesOfObject";
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
+import { sampleProjects } from "./sampleProjects";
 
 export async function getProjects() {
-  const database_id = process.env.PROJECTS_DATABASE_ID;
-  const projects = await notion.databases.query({
-    database_id,
-    sorts: [{ property: "Order", direction: "ascending" }],
-    filter: {
-      property: "published",
-      checkbox: {
-        equals: true,
-      },
-    },
-  });
-  const sanitizedProjects = projects.results.map(sanitizeProject);
-  return sanitizedProjects;
+  const { NOTION_API_KEY, PROJECTS_DATABASE_ID } = process.env;
+
+  if (!NOTION_API_KEY || !PROJECTS_DATABASE_ID) {
+    if (process.env.NODE_ENV === "production") {
+      throw new Error(
+        "NOTION_API_KEY and PROJECTS_DATABASE_ID must be set to build the site."
+      );
+    }
+    console.warn(
+      "[notion] NOTION_API_KEY / PROJECTS_DATABASE_ID not set, using sample projects."
+    );
+    return sampleProjects;
+  }
+
+  const notion = new Client({ auth: NOTION_API_KEY });
+  const results = [];
+  let start_cursor;
+  do {
+    const page = await notion.databases.query({
+      database_id: PROJECTS_DATABASE_ID,
+      start_cursor,
+      sorts: [{ property: "Order", direction: "ascending" }],
+      filter: { property: "published", checkbox: { equals: true } },
+    });
+    results.push(...page.results);
+    start_cursor = page.has_more ? page.next_cursor : undefined;
+  } while (start_cursor);
+
+  return results.map(sanitizeProject);
 }
+
+const plainText = (richText) =>
+  richText?.map((part) => part.plain_text).join("");
 
 function sanitizeProject(project) {
   const {
@@ -33,16 +51,14 @@ function sanitizeProject(project) {
     },
   } = project;
 
-  const sanitizedProject = {
+  return nullifyFalsyValuesOfObject({
     id,
-    title: Title.title?.[0]?.text?.content,
-    description: Description.rich_text?.[0]?.text?.content,
-    titleEs: TitleEs.rich_text?.[0]?.text?.content,
-    descriptionEs: DescriptionEs.rich_text?.[0]?.text?.content,
+    title: plainText(Title?.title),
+    description: plainText(Description?.rich_text),
+    titleEs: plainText(TitleEs?.rich_text),
+    descriptionEs: plainText(DescriptionEs?.rich_text),
     codeURL: codeURL?.url,
     pageURL: pageURL?.url,
     technologies: technologies?.multi_select,
-  };
-
-  return nullifyFalsyValuesOfObject(sanitizedProject);
+  });
 }

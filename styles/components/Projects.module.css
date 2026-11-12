@@ -1,20 +1,10 @@
-.proyectos {
-  text-align: center;
-  overflow-x: hidden;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: 1rem;
 }
-.title {
-  padding: 1rem;
-  color: var(--secondary);
-}
-.container {
-  padding: 1rem;
-  overflow:hidden;
-}
-.container > * {
-  margin-bottom: 1rem;
-}
+
 .showMore {
-  background-color: var(--background-color);
-  color: var(--secondary);
-  margin: 0 auto;
+  display: flex;
+  margin: 1.5rem auto 0;
 }
